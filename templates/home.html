@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Template</title>
+</head>
+<body>
+
+<h1>{{ name }}</h1>
+<p>Yosh: {{ age }}</p>
+
+<ul>
+    {% for student in students %}
+        <li>{{ forloop.counter }}. {{ student }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
