@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: django_jinja_app
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      # db.sqlite3 va media fayllar konteyner o'chirilganda ham saqlanib qolishi uchun
+      - ./db.sqlite3:/app/db.sqlite3
+      - media_data:/app/media
+      - static_data:/app/staticfiles
+
+volumes:
+  media_data:
+  static_data:
